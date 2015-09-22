@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:jessie
 RUN apt-get update
 RUN adduser --disabled-password --gecos "" wlmdevops
 RUN apt-get -y install build-essential python-dev libmysqlclient-dev
@@ -7,6 +7,6 @@ RUN mkdir /home/wlmpoc
 RUN chown -R wlmdevops:wlmdevops /home/wlmpoc
 RUN mkdir /home/wlmpoc/DjWebJessie
 RUN cd /home/wlmpoc/DjWebJessie
-ADD requirements.txt .
+ADD requirements.txt manage.py mysite .
 RUN pip install -r requirements.txt
 WORKDIR /home/wlmpoc/DjWebJessie

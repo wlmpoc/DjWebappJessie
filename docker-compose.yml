@@ -1,11 +1,11 @@
-db:
-  image: appcontainers/mysql:centos
+empdb:
+  image: wlmpoc/mysqlcentos:latest
 web:
-  build: .
+  build: ./
   command: python manage.py runserver 0.0.0.0:8080
   volumes:
-   - .:/home/wlmpoc/
+   - .:/home/wlmpoc/DjWebJessie
   ports:
     - "8080:8080"
   links:
-    - db
+    - employeedb

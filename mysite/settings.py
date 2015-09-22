@@ -83,11 +83,11 @@ DATABASES = {
 
         'NAME': 'emp',                                                                                
 
-        'USER': 'root',                                                                                  
+        'USER': 'djwebappjessie',                                                                                  
 
-        'PASSWORD': 'redhat!7',                                                                          
+        'PASSWORD': 'djwebappjessie',                                                                          
 
-        'HOST': 'db',
+        'HOST': 'employeedb',
 
     }
 
