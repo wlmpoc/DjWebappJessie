@@ -10,7 +10,7 @@ RUN cd /home/wlmpoc/DjWebJessie/
 ADD requirements.txt ./
 ADD manage.py ./
 ADD mysite ./
-ADD mysite/settings.py ./mysite/settings.py
+ADD mysite/settings.py ./mysite/settings.py/
 RUN pip install -r requirements.txt
 EXPOSE 8080
 WORKDIR /home/wlmpoc/DjWebJessie
