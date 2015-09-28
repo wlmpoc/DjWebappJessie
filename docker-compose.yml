@@ -1,10 +1,13 @@
-empdb:
-  image: wlmpoc/mysqlcentos:latest
-web:
-  build: ./
+employeedb:
+  image: wlmpoc/mysqlcentos
+  command: nohup /usr/bin/mysqld_safe &
+  ports:
+    - "3306:3306"
+djweb:
+  image: wlmpoc/djwebappjessie
   command: python manage.py runserver 0.0.0.0:8080
   volumes:
-   - .:/home/wlmpoc/DjWebJessie
+   - .:/home/wlmpoc/DjWebJessie/
   ports:
     - "8080:8080"
   links:
