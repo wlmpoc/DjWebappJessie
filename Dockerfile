@@ -1,4 +1,4 @@
-OM debian:latest
+FROM debian:latest
 RUN apt-get update
 RUN mkdir /home/wlmdevops/
 RUN adduser --disabled-password --gecos "" --home /home/wlmdevops wlmdevops
