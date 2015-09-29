@@ -5,8 +5,8 @@ RUN apt-get -y install wget unzip build-essential python-dev libmysqlclient-dev
 RUN apt-get -y install python3 python-pip 
 RUN chown -R wlmdevops:wlmdevops /home/wlmdevops/
 RUN su - wlmdevops
-RUN wget https://github.com/wlmpoc/DjWebappJessie/archive/master.zip -O /home/wlmdevops/DjWebappJessie.zip
-RUN cd /home/wlmdevops/
+RUN pwd;whoami
+RUN wget https://github.com/wlmpoc/DjWebappJessie/archive/master.zip -O DjWebappJessie.zip
 RUN unzip DjWebappJessie.zip
 RUN mv DjWebappJessie-master DjWebappJessie
 RUN cd DjWebappJessie/ 
