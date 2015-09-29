@@ -8,5 +8,6 @@ RUN su - wlmdevops
 RUN wget https://github.com/wlmpoc/DjWebappJessie/archive/master.zip -O DjWebappJessie.zip
 RUN unzip DjWebappJessie.zip
 RUN mv DjWebappJessie-master DjWebappJessie
-RUN pip install -r /home/wlmdevops/DjWebappJessie/requirements.txt
+RUN cd DjWebappJessie
+RUN pip install -r requirements.txt
 WORKDIR /home/wlmdevops/DjWebappJessie/
