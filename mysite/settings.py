@@ -89,6 +89,8 @@ DATABASES = {
 
         'HOST': 'employeedb',
 
+        'PORT': '3306'
+
     }
 
 }
