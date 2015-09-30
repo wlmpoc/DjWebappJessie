@@ -1,13 +1,14 @@
 employeedb:
-  image: wlmpoc/mysqlcentos
-  command: nohup /usr/bin/mysqld_safe &
-  ports:
-    - "3306:3306"
+  image: wlmpoc/centos_mysql
+  container_name: employeedb
+  hostname: employeedb
 djweb:
-  image: wlmpoc/djwebappjessie
+  image: wlmpoc/debianjessie_djwebapp
+  hostname: DjangoAppContainer
+  working_dir: /home/wlmdevops/DjWebappJessie/
   command: python manage.py runserver 0.0.0.0:8080
   volumes:
-   - .:/home/wlmpoc/DjWebJessie/
+   - .:/home/wlmpoc/DjWebappJessie/
   ports:
     - "8080:8080"
   links:
