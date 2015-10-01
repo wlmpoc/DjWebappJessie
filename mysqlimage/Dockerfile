@@ -8,7 +8,7 @@ RUN sed -i "s/.sock$/.sock\nbind-address=0.0.0.0/" /etc/my.cnf; \
     use mysql;UPDATE user SET Password=PASSWORD('wlmdevops') WHERE User='root';" >> /root/empdb.sql
 
 RUN echo "/etc/init.d/mysqld \$1;mysql -u root -h localhost < /root/empdb.sql; \
-    " >> /root/startdb.sh; \
+    " tailf /dev/null >> /root/startdb.sh; \
     chmod ugo+x /root/startdb.sh 
 
 EXPOSE 3306

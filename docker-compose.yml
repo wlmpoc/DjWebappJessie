@@ -3,7 +3,7 @@ employeedb:
   container_name: employeedb
   hostname: employeedb
   entrypoint: [ "/bin/bash" ]
-  command: "/root/startdb.sh restart && tailf /dev/null"
+  command: "/root/startdb.sh restart"
  
 djweb:
   image: wlmpoc/debianjessie_djwebapp:v2
