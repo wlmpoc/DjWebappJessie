@@ -13,7 +13,7 @@ RUN cd /home/wlmdevops/; \
     chown -R wlmdevops:wlmdevops /home/wlmdevops/; \
     pip install -r /home/wlmdevops/DjWebappJessie/requirements.txt; \
     su - wlmdevops; \
-    echo "python manage.py migrate; python manage.py runserver 0.0.0.0:8082"
+    echo "python manage.py migrate; python manage.py runserver 0.0.0.0:8082" > startup.sh
 
 WORKDIR /home/wlmdevops/DjWebappJessie
 EXPOSE 8082

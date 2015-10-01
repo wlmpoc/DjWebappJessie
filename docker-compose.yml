@@ -1,15 +1,15 @@
 employeedb:
-  image: wlmpoc/centos_mysql
+  image: wlmpoc/centos_mysql:v2
   container_name: employeedb
   hostname: employeedb
-  entrypoint: [ "/usr/bin/nohup"  ]
-  command: "/root/startdb.sh restart && tailf /dev/null" 
+  entrypoint: [ "/bin/bash" ]
+  command: "/root/startdb.sh restart && tailf /dev/null"
  
 djweb:
-  image: wlmpoc/debianjessie_djwebapp
+  image: wlmpoc/debianjessie_djwebapp:v2
   hostname: DjangoAppContainer
   container_name: DjangoAppContainer
-  command: python manage.py runserver 0.0.0.0:8082
+  command: "bash /home/wlmdevops/DjWebappJessie/startup.sh"                                                           
   volumes:
    - .:/home/wlmdevops/DjWebappJessie/backupdir/
   ports:
