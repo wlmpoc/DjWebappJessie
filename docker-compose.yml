@@ -1,9 +1,9 @@
-yeedb:
+employeedb:
   image: wlmpoc/centos_mysql
   container_name: employeedb
   hostname: employeedb
-  entrypoint: [ "/bin/bash"  ]
-  command: [ "/root/startdb.sh", "restart" ]
+  entrypoint: [ "/usr/bin/nohup"  ]
+  command: "/root/startdb.sh restart && tailf /dev/null" 
  
 djweb:
   image: wlmpoc/debianjessie_djwebapp
