@@ -11,3 +11,4 @@ RUN pip install -r /home/wlmdevops/DjWebappJessie/requirements.txt
 RUN mkdir /home/wlmdevops/DjWebappJessie/backupdir/
 RUN chown -R wlmdevops:wlmdevops /home/wlmdevops/
 WORKDIR /home/wlmdevops/DjWebappJessie
+EXPOSE 8081

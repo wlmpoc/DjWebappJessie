@@ -2,14 +2,17 @@ employeedb:
   image: wlmpoc/centos_mysql
   container_name: employeedb
   hostname: employeedb
+  entrypoint: [ "/bin/bash"  ]
+  command: [ "/root/startdb.sh", "restart" ]
+ 
 djweb:
   image: wlmpoc/debianjessie_djwebapp
   hostname: DjangoAppContainer
-  working_dir: /home/wlmdevops/DjWebappJessie/
-  command: python manage.py runserver 0.0.0.0:8080
+  container_name: DjangoAppContainer
+  command: python manage.py runserver 0.0.0.0:8081
   volumes:
-   - .:/home/wlmpoc/DjWebappJessie/
+   - .:/home/wlmdevops/DjWebappJessie/backupdir/
   ports:
-    - "8080:8080"
+    - "8081:8081"
   links:
     - employeedb
