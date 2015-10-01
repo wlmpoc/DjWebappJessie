@@ -1,7 +1,7 @@
 FROM debian:jessie
 
 RUN apt-get update; \
-    apt-get -y install wget unzip build-essential python-dev libmysqlclient-dev mysql-client python3 python-pip; \
+    apt-get -y install wget unzip python-dev libmysqlclient-dev python-pip; \
     mkdir /home/wlmdevops/; \
     adduser --disabled-password --gecos "" --home /home/wlmdevops wlmdevops;
 
