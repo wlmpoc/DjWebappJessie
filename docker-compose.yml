@@ -1,4 +1,4 @@
-employeedb:
+yeedb:
   image: wlmpoc/centos_mysql
   container_name: employeedb
   hostname: employeedb
@@ -9,10 +9,10 @@ djweb:
   image: wlmpoc/debianjessie_djwebapp
   hostname: DjangoAppContainer
   container_name: DjangoAppContainer
-  command: python manage.py runserver 0.0.0.0:8081
+  command: python manage.py runserver 0.0.0.0:8082
   volumes:
    - .:/home/wlmdevops/DjWebappJessie/backupdir/
   ports:
-    - "8081:8081"
+    - "40000:8082"
   links:
     - employeedb
